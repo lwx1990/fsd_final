@@ -1,0 +1,26 @@
+<div class="container" style="margin-top: 50px;">
+    <h1 class="text-center">Delivery Location</h1>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <div *ngIf="apiLoaded | async">
+                <google-map height="500px" width="600px" [center]="center" [zoom]="zoom">
+                    <map-marker [position]="markerPositions" [options]="markerOptions"></map-marker>
+                </google-map> 
+            </div>
+        </div>
+        <div class="col">
+            <div *ngFor="let u of consumer">
+                <h4>Name: {{u.first_name}}</h4>
+                <br>
+                <h4>Food Ordered: {{u.food}}</h4>
+                <br>
+                <h4>Ordered Date : {{u.date}}</h4>
+                <br>
+                <h4>Ordered Time : {{u.time}}</h4>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
